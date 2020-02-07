@@ -7,10 +7,14 @@ import React, {
 } from 'react';
 import { useAsync, UseAsyncReturn } from 'react-async-hook';
 
+type Rocket = {
+  rocket_name: string;
+};
+
 export type SpaceXAPILaunch = {
   mission_name: string;
   flight_number: number;
-  rocket_name: string;
+  rocket: Rocket;
   launch_date_utc: string;
 };
 

@@ -18,7 +18,7 @@ export const Content: FunctionComponent<ContentProps> = () => {
               <LaunchItem
                 missionName={launch.mission_name}
                 flightNumber={launch.flight_number}
-                rocketName={launch.rocket_name}
+                rocketName={launch.rocket.rocket_name}
                 launchDateUTC={launch.launch_date_utc}
               ></LaunchItem>
             ))}
