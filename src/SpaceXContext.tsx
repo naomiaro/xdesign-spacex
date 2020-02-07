@@ -16,6 +16,7 @@ export type SpaceXAPILaunch = {
   flight_number: number;
   rocket: Rocket;
   launch_date_utc: string;
+  launch_year: number;
 };
 
 const fetchSpaceXLaunches = async (): Promise<SpaceXAPILaunch[]> =>
