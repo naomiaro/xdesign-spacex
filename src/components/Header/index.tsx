@@ -7,7 +7,10 @@ type HeaderProps = {};
 
 export const Header: FunctionComponent<HeaderProps> = () => (
   <header className={styles.header}>
-    <img src={logo} className={styles.logo} alt="logo" />
+    <div>
+      <img src={logo} className={styles.logo} alt="logo" />
+      <span>Launches</span>
+    </div>
     <Button>Reload Data</Button>
   </header>
 );
