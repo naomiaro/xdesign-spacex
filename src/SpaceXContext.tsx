@@ -7,11 +7,18 @@ import React, {
 } from 'react';
 import { useAsync, UseAsyncReturn } from 'react-async-hook';
 
-const fetchSpaceXLaunches = async () =>
+export type SpaceXAPILaunch = {
+  mission_name: string;
+  flight_number: number;
+  rocket_name: string;
+  launch_date_utc: string;
+};
+
+const fetchSpaceXLaunches = async (): Promise<SpaceXAPILaunch[]> =>
   (await fetch(`https://api.spacexdata.com/v3/launches`)).json();
 
 type LaunchesProps = {
-  launchData: UseAsyncReturn;
+  launchData: UseAsyncReturn<SpaceXAPILaunch[], number[]>;
 };
 
 type RefreshProps = {
