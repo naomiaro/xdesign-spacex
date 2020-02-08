@@ -1,0 +1,14 @@
+.LaunchList {
+  padding: 0 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.asc {
+  flex-direction: column;
+}
+
+.desc {
+  flex-direction: column-reverse;
+}

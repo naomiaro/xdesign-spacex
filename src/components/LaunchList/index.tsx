@@ -8,12 +8,16 @@ import Select, { ValueType } from 'react-select';
 import styles from './LaunchList.module.css';
 import { SpaceXAPILaunch } from 'SpaceXContext';
 import { LaunchItem } from 'components/LaunchItem';
+import { Button } from 'components/Button';
+import classNames from 'classnames';
+
+const cx = classNames.bind(styles);
 
 type LaunchListProps = {
   launches: SpaceXAPILaunch[];
 };
 
-type SortDirection = 'asc' | 'desc';
+type SortDirection = 1 | -1;
 type Year = number | null;
 
 type OptionType = { label: Year; value: Year };
@@ -45,7 +49,7 @@ const YearFilter: FunctionComponent<YearFilterProps> = ({
 export const LaunchList: FunctionComponent<LaunchListProps> = ({
   launches,
 }) => {
-  const [sort, setSort] = useState<SortDirection>('asc');
+  const [sort, setSort] = useState<SortDirection>(1);
   const [year, setYear] = useState<Year>(null);
 
   const allYears = new Set<Year>();
@@ -57,9 +61,6 @@ export const LaunchList: FunctionComponent<LaunchListProps> = ({
   const viewData = launches.filter(data =>
     year === null ? true : data.launch_year === year
   );
-  if (sort === 'desc') {
-    viewData.reverse();
-  }
 
   return (
     <section>
@@ -69,8 +70,15 @@ export const LaunchList: FunctionComponent<LaunchListProps> = ({
           setYear={setYear}
           selectedOption={year}
         />
+        <Button
+          onClick={() => {
+            setSort((sort * -1) as SortDirection);
+          }}
+        >
+          Sort {sort}
+        </Button>
       </div>
-      <ul>
+      <ul className={cx('LaunchList', { asc: sort }, { desc: !sort })}>
         {viewData.map((launch: SpaceXAPILaunch) => (
           <LaunchItem
             key={launch.mission_name}
