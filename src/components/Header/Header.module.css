@@ -1,4 +1,4 @@
-.header {
+.Header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -7,4 +7,9 @@
 
 .logo {
   width: 200px;
+}
+
+.launches {
+  text-transform: uppercase;
+  font-size: 1.5rem;
 }

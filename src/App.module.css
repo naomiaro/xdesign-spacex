@@ -2,6 +2,7 @@
   display: grid;
   grid-template-rows: [header-start] 5rem [header-end content-start] 1fr [content-end];
   grid-template-columns: [aside-start] 500px [aside-end content-start] 1fr [content-end];
+  grid-row-gap: 30px;
 }
 
 .Header {

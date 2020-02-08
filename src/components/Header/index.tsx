@@ -13,10 +13,10 @@ type HeaderProps = {
 export const Header: FunctionComponent<HeaderProps> = ({ className }) => {
   const { setTs } = useContext(RefreshContext);
   return (
-    <header className={cx(className, styles.header)}>
+    <header className={cx(className, styles.Header)}>
       <div>
         <img src={logo} className={styles.logo} alt="logo" />
-        <span>Launches</span>
+        <span className={styles.launches}>Launches</span>
       </div>
       <BulletButton
         onClick={() => {
