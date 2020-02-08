@@ -1,6 +1,7 @@
 .LaunchItem {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   border: 1px solid var(--border-grey);
   border-radius: 0.5rem;
   box-shadow: 0 4px 4px var(--shadow-grey);
@@ -15,7 +16,7 @@
 
 .missionName {
   flex-grow: 1;
-  font-size: 2rem;
+  font-size: 1.7rem;
   padding: 1rem;
 }
 
@@ -31,4 +32,5 @@
 
 .rocketName {
   font-weight: 900;
+  font-size: 1.2rem;
 }

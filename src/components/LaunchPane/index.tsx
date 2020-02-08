@@ -9,6 +9,7 @@ import { SpaceXAPILaunch } from 'SpaceXContext';
 import { LaunchList } from 'components/LaunchList';
 import { Button } from 'components/Button';
 import { SortIcon } from 'components/Icon';
+import styles from './LaunchPane.module.css';
 
 type LaunchPaneProps = {
   launches: SpaceXAPILaunch[];
@@ -83,8 +84,8 @@ export const LaunchPane: FunctionComponent<LaunchPaneProps> = ({
   );
 
   return (
-    <section>
-      <div>
+    <section className={styles.LaunchPane}>
+      <div className={styles.Filters}>
         <YearFilter
           years={Array.from(allYears).sort()}
           setYear={setYear}

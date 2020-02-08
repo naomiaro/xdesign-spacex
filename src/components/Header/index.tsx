@@ -1,4 +1,5 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useContext } from 'react';
+import { RefreshContext } from 'SpaceXContext';
 import logo from 'assets/spacex-logo.png';
 import { BulletButton } from 'components/Button/index';
 import styles from './Header.module.css';
@@ -9,14 +10,21 @@ type HeaderProps = {
   className?: string;
 };
 
-export const Header: FunctionComponent<HeaderProps> = ({ className }) => (
-  <header className={cx(className, styles.header)}>
-    <div>
-      <img src={logo} className={styles.logo} alt="logo" />
-      <span>Launches</span>
-    </div>
-    <BulletButton>
-      Reload Data <RefreshIcon />
-    </BulletButton>
-  </header>
-);
+export const Header: FunctionComponent<HeaderProps> = ({ className }) => {
+  const { setTs } = useContext(RefreshContext);
+  return (
+    <header className={cx(className, styles.header)}>
+      <div>
+        <img src={logo} className={styles.logo} alt="logo" />
+        <span>Launches</span>
+      </div>
+      <BulletButton
+        onClick={() => {
+          setTs(Date.now());
+        }}
+      >
+        Reload Data <RefreshIcon />
+      </BulletButton>
+    </header>
+  );
+};

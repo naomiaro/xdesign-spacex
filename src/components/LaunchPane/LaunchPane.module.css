@@ -1,1 +1,9 @@
+.Filters {
+  display: flex;
+  justify-content: flex-end;
+}
 
+.LaunchPane {
+  max-width: 800px;
+  margin: 0 auto;
+}

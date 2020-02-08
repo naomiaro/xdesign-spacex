@@ -31,7 +31,9 @@ type RefreshProps = {
 };
 
 export const LaunchesContext = createContext<Partial<LaunchesProps>>({});
-export const RefreshContext = createContext<Partial<RefreshProps>>({});
+export const RefreshContext = createContext<RefreshProps>({
+  setTs: () => {},
+});
 
 export const SpaceXProvider: FunctionComponent = ({ children }) => {
   const [ts, setTs] = useState(Date.now());
