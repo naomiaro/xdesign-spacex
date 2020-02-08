@@ -1,0 +1,28 @@
+.react-select .react-select__control {
+  background-color: var(--primary-blue);
+  border-radius: 0;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 0 0 4px var(--primary-blue);
+  transition: transform 150ms ease;
+}
+
+.react-select .react-select__control:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 4px var(--primary-blue), 0 8px 8px var(--shadow-grey);
+}
+
+.react-select .react-select__control--is-focused {
+  outline: 0;
+  box-shadow: 0 0 0 1px white, 0 0 0 4px var(--primary-blue),
+    0 8px 8px var(--shadow-grey);
+}
+
+.react-select .react-select__placeholder,
+.react-select .react-select__single-value,
+.react-select .react-select__indicator,
+.react-select .react-select__indicator:hover {
+  color: white;
+}

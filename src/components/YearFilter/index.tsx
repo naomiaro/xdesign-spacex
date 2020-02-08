@@ -1,6 +1,8 @@
 import React, { FunctionComponent, Dispatch, SetStateAction } from 'react';
 import Select, { ValueType } from 'react-select';
 import styles from './YearFilter.module.css';
+import cx from 'classnames';
+import './react-select.css';
 
 export type Year = number | null;
 type OptionType = { label: string; value: Year };
@@ -34,9 +36,10 @@ export const YearFilter: FunctionComponent<YearFilterProps> = ({
         )
       }
       options={options}
-      className={styles.YearFilter}
+      className={cx(styles.YearFilter, 'react-select')}
       isClearable
       placeholder="Filter by Year"
+      classNamePrefix="react-select"
     />
   );
 };
