@@ -1,7 +1,7 @@
 .btn {
   display: inline-block;
   border: none;
-  padding: 1rem 2rem;
+  padding: 0.5rem 1rem;
   margin: 0;
   text-decoration: none;
   font-size: 1rem;
@@ -15,18 +15,29 @@
 .btn-primary {
   color: white;
   background-color: var(--primary-blue);
+  box-shadow: 0 0 0 4px var(--primary-blue);
 }
 
 .btn:hover {
   transform: translateY(-1px);
-  box-shadow: 0 4px 4px var(--shadow-grey);
+  box-shadow: 0 0 0 4px var(--primary-blue), 0 8px 8px var(--shadow-grey);
 }
 
 .btn:focus {
-  outline: 1px solid white;
-  outline-offset: -4px;
+  outline: 0;
+  box-shadow: 0 0 0 1px white, 0 0 0 4px var(--primary-blue),
+    0 8px 8px var(--shadow-grey);
+}
+
+.btn::-moz-focus-inner {
+  border: 0;
 }
 
 .btn:active {
   transform: scale(0.99);
+}
+
+.bullet {
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
 }

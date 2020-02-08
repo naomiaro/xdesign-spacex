@@ -1,8 +1,9 @@
 import React, { FunctionComponent } from 'react';
 import logo from 'assets/spacex-logo.png';
-import { Button } from 'components/Button/index';
+import { BulletButton } from 'components/Button/index';
 import styles from './Header.module.css';
 import cx from 'classnames';
+import { RefreshIcon } from 'components/Icon';
 
 type HeaderProps = {
   className?: string;
@@ -14,6 +15,8 @@ export const Header: FunctionComponent<HeaderProps> = ({ className }) => (
       <img src={logo} className={styles.logo} alt="logo" />
       <span>Launches</span>
     </div>
-    <Button>Reload Data</Button>
+    <BulletButton>
+      Reload Data <RefreshIcon />
+    </BulletButton>
   </header>
 );

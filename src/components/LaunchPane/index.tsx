@@ -8,6 +8,7 @@ import Select, { ValueType } from 'react-select';
 import { SpaceXAPILaunch } from 'SpaceXContext';
 import { LaunchList } from 'components/LaunchList';
 import { Button } from 'components/Button';
+import { SortIcon } from 'components/Icon';
 
 type LaunchPaneProps = {
   launches: SpaceXAPILaunch[];
@@ -22,6 +23,11 @@ type YearFilterProps = {
   years: Year[];
   setYear: Dispatch<SetStateAction<Year>>;
   selectedOption: Year;
+};
+
+type SortControlProps = {
+  setSort: Dispatch<SetStateAction<SortDirection>>;
+  selectedOption: SortDirection;
 };
 
 const YearFilter: FunctionComponent<YearFilterProps> = ({
@@ -42,6 +48,21 @@ const YearFilter: FunctionComponent<YearFilterProps> = ({
       }
       options={options}
     />
+  );
+};
+
+const SortControl: FunctionComponent<SortControlProps> = ({
+  setSort,
+  selectedOption,
+}) => {
+  return (
+    <Button
+      onClick={() => {
+        setSort((selectedOption * -1) as SortDirection);
+      }}
+    >
+      Sort {selectedOption === 1 ? 'Descending' : 'Ascending'} <SortIcon />
+    </Button>
   );
 };
 
@@ -69,13 +90,7 @@ export const LaunchPane: FunctionComponent<LaunchPaneProps> = ({
           setYear={setYear}
           selectedOption={year}
         />
-        <Button
-          onClick={() => {
-            setSort((sort * -1) as SortDirection);
-          }}
-        >
-          Sort {sort}
-        </Button>
+        <SortControl setSort={setSort} selectedOption={sort} />
       </div>
       <LaunchList launches={viewData} sort={sort}></LaunchList>
     </section>

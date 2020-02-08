@@ -11333,6 +11333,13 @@ requires-port@^1.0.0:
   resolved "https://registry.yarnpkg.com/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
   integrity sha1-kl0mAdOaxIXgkc8NpcbmlNw9yv8=
 
+rescript-use-postcss-config@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/rescript-use-postcss-config/-/rescript-use-postcss-config-1.0.0.tgz#f6d08192196ff64f4b8870c44bb9290b02d485c4"
+  integrity sha512-055mvXzxEkYNYdOJtJTqteAEf87kSHVt23VuNSi0yvnaWGLrFfc/tSxoPpfDxkfU5/nSHSUGTwy0nhd2uzA2XQ==
+  dependencies:
+    postcss-load-config "^2.1.0"
+
 reserved-words@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/reserved-words/-/reserved-words-0.1.2.tgz#00a0940f98cd501aeaaac316411d9adc52b31ab1"
