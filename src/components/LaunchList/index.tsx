@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 import styles from './LaunchList.module.css';
 import { SpaceXAPILaunch } from 'SpaceXContext';
 import { LaunchItem } from 'components/LaunchItem';
-import { SortDirection } from 'components/LaunchPane';
+import { SortDirection } from 'components/SortControl';
 import cx from 'classnames';
 
 type LaunchListProps = {

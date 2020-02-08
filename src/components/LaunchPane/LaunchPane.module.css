@@ -3,10 +3,6 @@
   justify-content: flex-end;
 }
 
-.YearFilter {
-  width: 10rem;
-}
-
 .LaunchPane {
   max-width: 800px;
   margin: 0 auto;
