@@ -38,16 +38,25 @@ const YearFilter: FunctionComponent<YearFilterProps> = ({
 }) => {
   const options = years.map(year => ({
     value: year,
-    label: year ? `${year}` : 'All',
+    label: `${year}`,
   }));
-  const value = { label: `${selectedOption}`, value: selectedOption };
+  const value = selectedOption
+    ? { label: `${selectedOption}`, value: selectedOption }
+    : null;
   return (
     <Select
       value={value}
-      onChange={(selectedYear: ValueType<OptionType>) =>
-        setYear((selectedYear as OptionType).value)
+      onChange={(selectedYear: ValueType<OptionType> | null) =>
+        setYear(
+          selectedYear === null
+            ? selectedYear
+            : (selectedYear as OptionType).value
+        )
       }
       options={options}
+      className={styles.YearFilter}
+      isClearable
+      placeholder="Filter by Year"
     />
   );
 };
@@ -73,7 +82,7 @@ export const LaunchPane: FunctionComponent<LaunchPaneProps> = ({
   const [sort, setSort] = useState<SortDirection>(1);
   const [year, setYear] = useState<Year>(null);
 
-  const allYears = new Set<Year>([null]);
+  const allYears = new Set<Year>();
 
   launches.forEach(launch => {
     allYears.add(launch.launch_year);
