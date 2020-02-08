@@ -16,7 +16,7 @@ type LaunchListProps = {
 export type SortDirection = 1 | -1;
 type Year = number | null;
 
-type OptionType = { label: Year; value: Year };
+type OptionType = { label: string; value: Year };
 
 type YearFilterProps = {
   years: Year[];
@@ -29,8 +29,11 @@ const YearFilter: FunctionComponent<YearFilterProps> = ({
   setYear,
   selectedOption,
 }) => {
-  const options = years.map(year => ({ value: year, label: year }));
-  const value = { label: selectedOption, value: selectedOption };
+  const options = years.map(year => ({
+    value: year,
+    label: year ? `${year}` : 'All',
+  }));
+  const value = { label: `${selectedOption}`, value: selectedOption };
   return (
     <Select
       value={value}
@@ -48,7 +51,7 @@ export const LaunchPane: FunctionComponent<LaunchListProps> = ({
   const [sort, setSort] = useState<SortDirection>(1);
   const [year, setYear] = useState<Year>(null);
 
-  const allYears = new Set<Year>();
+  const allYears = new Set<Year>([null]);
 
   launches.forEach(launch => {
     allYears.add(launch.launch_year);
@@ -62,7 +65,7 @@ export const LaunchPane: FunctionComponent<LaunchListProps> = ({
     <section>
       <div>
         <YearFilter
-          years={Array.from(allYears)}
+          years={Array.from(allYears).sort()}
           setYear={setYear}
           selectedOption={year}
         />
