@@ -1,20 +1,20 @@
 .App {
   display: grid;
-  grid-template-rows: 3rem 1fr;
-  grid-template-columns: 500px 1fr;
+  grid-template-rows: [header-start] 3rem [header-end content-start] 1fr [content-end];
+  grid-template-columns: [aside-start] 500px [aside-end content-start] 1fr [content-end];
 }
 
 .Header {
-  grid-row: 1 / 2;
-  grid-column: 1 / -1;
+  grid-row: header-start / header-end;
+  grid-column: aside-start / main-end;
 }
 
 .Aside {
-  grid-row: 2 / -1;
-  grid-column: 1 / 2;
+  grid-row: content-start / content-end;
+  grid-column: aside-start / aside-end;
 }
 
 .Content {
-  grid-row: 2 / -1;
-  grid-column: 2 / 3;
+  grid-row: content-start / content-end;
+  grid-column: content-start / content-end;
 }

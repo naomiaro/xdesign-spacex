@@ -9,7 +9,7 @@ import { SpaceXAPILaunch } from 'SpaceXContext';
 import { LaunchList } from 'components/LaunchList';
 import { Button } from 'components/Button';
 
-type LaunchListProps = {
+type LaunchPaneProps = {
   launches: SpaceXAPILaunch[];
 };
 
@@ -45,7 +45,7 @@ const YearFilter: FunctionComponent<YearFilterProps> = ({
   );
 };
 
-export const LaunchPane: FunctionComponent<LaunchListProps> = ({
+export const LaunchPane: FunctionComponent<LaunchPaneProps> = ({
   launches,
 }) => {
   const [sort, setSort] = useState<SortDirection>(1);
