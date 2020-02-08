@@ -45,7 +45,7 @@ const YearFilter: FunctionComponent<YearFilterProps> = ({
 export const LaunchList: FunctionComponent<LaunchListProps> = ({
   launches,
 }) => {
-  const [sort, toggleSort] = useState<SortDirection>('asc');
+  const [sort, setSort] = useState<SortDirection>('asc');
   const [year, setYear] = useState<Year>(null);
 
   const allYears = new Set<Year>();
