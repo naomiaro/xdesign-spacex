@@ -1,10 +1,32 @@
 .btn {
+  display: inline-block;
+  border: none;
+  padding: 1rem 2rem;
+  margin: 0;
+  text-decoration: none;
   font-size: 1rem;
-  line-height: 1.5rem;
-  padding: 0.4rem;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
 .btn-primary {
   color: white;
   background-color: var(--primary-blue);
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 4px var(--shadow-grey);
+}
+
+.btn:focus {
+  outline: 1px solid white;
+  outline-offset: -4px;
+}
+
+.btn:active {
+  transform: scale(0.99);
 }

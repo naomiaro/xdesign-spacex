@@ -1,5 +1,7 @@
 :root {
   --primary-blue: #215184;
+  --shadow-grey: #d8d3d3;
+  --border-grey: #eee;
   --font-color: #545454;
   --font-family: 'Brandon Grotesque', Arial, Helvetica, sans-serif;
 }

@@ -1,9 +1,9 @@
 .LaunchItem {
   display: flex;
   justify-content: space-between;
-  border: 1px solid #eee;
+  border: 1px solid var(--border-grey);
   border-radius: 0.5rem;
-  box-shadow: 0 4px 4px #d8d3d3;
+  box-shadow: 0 4px 4px var(--shadow-grey);
   margin-top: 0.6rem;
 }
 
