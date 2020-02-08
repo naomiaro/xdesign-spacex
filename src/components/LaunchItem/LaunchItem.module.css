@@ -1,0 +1,34 @@
+.LaunchItem {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #eee;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 4px #d8d3d3;
+  margin-top: 0.6rem;
+}
+
+.flightNumber {
+  text-emphasis: right;
+  font-size: 2rem;
+  padding: 1rem;
+}
+
+.missionName {
+  flex-grow: 1;
+  font-size: 2rem;
+  padding: 1rem;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  padding: 1rem;
+}
+
+.date {
+}
+
+.rocketName {
+  font-weight: 900;
+}

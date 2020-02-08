@@ -17,12 +17,12 @@ export const LaunchItem: FunctionComponent<LaunchItemProps> = ({
 }) => {
   const date = parseISO(launchDateUTC);
   return (
-    <li>
-      <div>#{flightNumber}</div>
-      <div>{missionName}</div>
-      <div>
-        <div>{format(date, 'do LLL yyyy')}</div>
-        <div>{rocketName}</div>
+    <li className={styles.LaunchItem}>
+      <div className={styles.flightNumber}>#{flightNumber}</div>
+      <div className={styles.missionName}>{missionName}</div>
+      <div className={styles.info}>
+        <div className={styles.date}>{format(date, 'do LLL yyyy')}</div>
+        <div className={styles.rocketName}>{rocketName}</div>
       </div>
     </li>
   );
