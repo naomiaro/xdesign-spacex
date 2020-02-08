@@ -5,19 +5,29 @@
   cursor: pointer;
   font-weight: bold;
   padding: 0.5rem 1rem;
-  box-shadow: 0 0 0 4px var(--primary-blue);
   transition: transform 150ms ease;
 }
 
 .react-select .react-select__control:hover {
   transform: translateY(-1px);
-  box-shadow: 0 0 0 4px var(--primary-blue), 0 8px 8px var(--shadow-grey);
+  box-shadow: 0 8px 8px var(--shadow-grey);
 }
 
 .react-select .react-select__control--is-focused {
-  outline: 0;
-  box-shadow: 0 0 0 1px white, 0 0 0 4px var(--primary-blue),
-    0 8px 8px var(--shadow-grey);
+  outline: 1px solid #fff !important;
+  outline-offset: -4px !important;
+}
+
+.react-select .react-select__placeholder {
+  margin: 0;
+}
+
+.react-select .react-select__value-container {
+  padding: 0;
+}
+
+.react-select .react-select__indicators {
+  height: 32px;
 }
 
 .react-select .react-select__placeholder,
