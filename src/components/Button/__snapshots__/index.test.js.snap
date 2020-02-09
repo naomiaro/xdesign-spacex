@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rendering Renders a BulletButton 1`] = `
+<Button
+  className="bullet"
+>
+  Refresh
+</Button>
+`;
+
+exports[`Rendering Renders a Button 1`] = `
+<button
+  className="btn btn-primary"
+  type="button"
+>
+  Refresh
+</button>
+`;
