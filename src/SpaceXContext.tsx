@@ -5,7 +5,7 @@ import React, {
   Dispatch,
   SetStateAction,
 } from 'react';
-import { useAsync, UseAsyncReturn } from 'react-async-hook';
+import { useAsyncAbortable, UseAsyncReturn } from 'react-async-hook';
 
 type Rocket = {
   rocket_name: string;
@@ -18,9 +18,6 @@ export type SpaceXAPILaunch = {
   launch_date_utc: string;
   launch_year: number;
 };
-
-const fetchSpaceXLaunches = async (): Promise<SpaceXAPILaunch[]> =>
-  (await fetch(`https://api.spacexdata.com/v3/launches`)).json();
 
 type LaunchesProps = {
   launchData: UseAsyncReturn<SpaceXAPILaunch[], number[]>;
@@ -35,9 +32,20 @@ export const RefreshContext = createContext<RefreshProps>({
   setTs: () => {},
 });
 
+const fetchSpaceXLaunches = async (abortSignal: AbortSignal) => {
+  const res = await fetch('https://api.spacexdata.com/v3/launches', {
+    signal: abortSignal,
+  });
+
+  if (!res.ok) {
+    throw new Error('Network response was not ok' + res.status);
+  }
+  return res.json();
+};
+
 export const SpaceXProvider: FunctionComponent = ({ children }) => {
   const [ts, setTs] = useState(Date.now());
-  const launchData = useAsync(fetchSpaceXLaunches, [ts]);
+  const launchData = useAsyncAbortable(fetchSpaceXLaunches, [ts]);
 
   return (
     <RefreshContext.Provider value={{ setTs }}>
