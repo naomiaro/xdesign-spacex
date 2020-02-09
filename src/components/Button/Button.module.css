@@ -4,7 +4,7 @@
   padding: 0.5rem 1rem;
   margin: 0;
   text-decoration: none;
-  font-family: var(--font-family);
+  font-family: inherit;
   font-weight: bold;
   font-size: 1rem;
   cursor: pointer;
@@ -12,6 +12,10 @@
   transition: transform 150ms ease;
   -webkit-appearance: none;
   -moz-appearance: none;
+}
+
+.btn > * {
+  margin-left: 1rem;
 }
 
 .btn-primary {

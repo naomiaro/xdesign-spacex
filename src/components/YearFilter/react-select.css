@@ -4,7 +4,7 @@
   border: none;
   cursor: pointer;
   font-weight: bold;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0 0.5rem 1rem;
   transition: transform 150ms ease;
 }
 
@@ -16,6 +16,7 @@
 .react-select .react-select__control--is-focused {
   outline: 1px solid #fff !important;
   outline-offset: -4px !important;
+  box-shadow: unset;
 }
 
 .react-select .react-select__placeholder {
