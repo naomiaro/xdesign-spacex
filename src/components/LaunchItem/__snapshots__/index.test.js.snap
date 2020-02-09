@@ -21,7 +21,7 @@ exports[`Renders a LaunchItem 1`] = `
     <div
       className="date"
     >
-      25th Mar 2006
+      24th Mar 2006
     </div>
     <div
       className="rocketName"
