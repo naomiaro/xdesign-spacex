@@ -11,7 +11,7 @@ type HeaderProps = {
 };
 
 export const Header: FunctionComponent<HeaderProps> = ({ className }) => {
-  const { setTs } = useContext(RefreshContext);
+  const { refresh } = useContext(RefreshContext);
   return (
     <header className={cx(className, styles.Header)}>
       <div>
@@ -20,7 +20,7 @@ export const Header: FunctionComponent<HeaderProps> = ({ className }) => {
       </div>
       <BulletButton
         onClick={() => {
-          setTs(Date.now());
+          refresh();
         }}
       >
         Reload Data <RefreshIcon />

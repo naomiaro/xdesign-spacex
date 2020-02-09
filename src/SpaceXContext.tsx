@@ -24,12 +24,12 @@ type LaunchesProps = {
 };
 
 type RefreshProps = {
-  setTs: Dispatch<SetStateAction<number>>;
+  refresh: VoidFunction;
 };
 
 export const LaunchesContext = createContext<Partial<LaunchesProps>>({});
 export const RefreshContext = createContext<RefreshProps>({
-  setTs: () => {},
+  refresh: () => {},
 });
 
 const fetchSpaceXLaunches = async (abortSignal: AbortSignal) => {
@@ -43,12 +43,19 @@ const fetchSpaceXLaunches = async (abortSignal: AbortSignal) => {
   return res.json();
 };
 
+function createRefresh(setTs: Dispatch<SetStateAction<number>>) {
+  return function() {
+    setTs(Date.now());
+  };
+}
+
 export const SpaceXProvider: FunctionComponent = ({ children }) => {
   const [ts, setTs] = useState(Date.now());
   const launchData = useAsyncAbortable(fetchSpaceXLaunches, [ts]);
+  const refresh = createRefresh(setTs);
 
   return (
-    <RefreshContext.Provider value={{ setTs }}>
+    <RefreshContext.Provider value={{ refresh }}>
       <LaunchesContext.Provider value={{ launchData }}>
         {children}
       </LaunchesContext.Provider>
