@@ -10,8 +10,7 @@
   cursor: pointer;
   text-align: center;
   transition: transform 150ms ease;
-  -webkit-appearance: none;
-  -moz-appearance: none;
+  appearance: none;
 }
 
 .btn > * {
