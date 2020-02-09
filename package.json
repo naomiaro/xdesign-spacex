@@ -27,7 +27,7 @@
   "scripts": {
     "start": "rescripts start",
     "build": "rescripts build",
-    "test": "TZ=UTC rescripts test",
+    "test": "rescripts test",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public"
   },
@@ -35,6 +35,7 @@
     "extends": "react-app"
   },
   "jest": {
+    "globalSetup": "./globalSetup.js",
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ]
