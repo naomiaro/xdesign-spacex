@@ -39,6 +39,7 @@ export const YearFilter: FunctionComponent<YearFilterProps> = ({
       className={cx(styles.YearFilter, 'react-select')}
       isClearable
       placeholder="Filter by Year"
+      aria-label="Filter by Year"
       classNamePrefix="react-select"
     />
   );

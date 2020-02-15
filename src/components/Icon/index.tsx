@@ -19,7 +19,7 @@ type iconProps = {
 
 const Icon: FunctionComponent<iconProps> = ({ srcSet, alt }) => {
   return (
-    <span className={styles.Icon}>
+    <span className={styles.Icon} aria-hidden="true">
       <img
         srcSet={`${srcSet[0]},
         ${srcSet[1]} 2x,

@@ -14,7 +14,7 @@ export const Header: FunctionComponent<HeaderProps> = ({ className }) => {
   const { refresh } = useContext(RefreshContext);
   return (
     <header className={cx(className, styles.Header)}>
-      <div>
+      <div aria-hidden="true">
         <img src={logo} className={styles.logo} alt="logo" />
         <span className={styles.launches}>Launches</span>
       </div>
