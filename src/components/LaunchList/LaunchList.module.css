@@ -1,11 +1,4 @@
 .LaunchList {
   display: flex;
-}
-
-.asc {
   flex-direction: column;
-}
-
-.desc {
-  flex-direction: column-reverse;
 }

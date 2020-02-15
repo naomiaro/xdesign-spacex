@@ -25,6 +25,10 @@ export const LaunchPane: FunctionComponent<LaunchPaneProps> = ({
     year === null ? true : data.launch_year === year
   );
 
+  if (sort === -1) {
+    viewData.reverse();
+  }
+
   return (
     <section className={styles.LaunchPane}>
       <div className={styles.Filters}>
@@ -35,7 +39,7 @@ export const LaunchPane: FunctionComponent<LaunchPaneProps> = ({
         />
         <SortControl setSort={setSort} selectedOption={sort} />
       </div>
-      <LaunchList launches={viewData} sort={sort}></LaunchList>
+      <LaunchList launches={viewData}></LaunchList>
     </section>
   );
 };
