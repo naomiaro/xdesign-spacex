@@ -6,6 +6,7 @@ import React, {
   SetStateAction,
 } from 'react';
 import { useAsyncAbortable, UseAsyncReturn } from 'react-async-hook';
+import { Announcements } from 'components/Announcements';
 
 type Rocket = {
   rocket_name: string;
@@ -58,6 +59,15 @@ export const SpaceXProvider: FunctionComponent = ({ children }) => {
     <RefreshContext.Provider value={{ refresh }}>
       <LaunchesContext.Provider value={{ launchData }}>
         {children}
+        <Announcements
+          message={
+            launchData.loading
+              ? 'Loading'
+              : launchData.error
+              ? `Error ${launchData.error.message}`
+              : 'SpaceX Launches Loaded'
+          }
+        />
       </LaunchesContext.Provider>
     </RefreshContext.Provider>
   );
