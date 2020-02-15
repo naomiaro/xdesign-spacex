@@ -12,7 +12,7 @@ export const LaunchList: FunctionComponent<LaunchListProps> = ({
   launches,
 }) => {
   return (
-    <ul className={cx(styles.LaunchList)}>
+    <ul className={cx(styles.LaunchList)} aria-live="polite" aria-atomic="true">
       {launches.map((launch: SpaceXAPILaunch) => (
         <LaunchItem
           key={launch.mission_name}
