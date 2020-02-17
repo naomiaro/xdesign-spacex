@@ -1,32 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Renders a LaunchItem 1`] = `
-<li
-  className="LaunchItem"
->
+<li>
   <div
-    className="flightNumber"
-  >
-    #
-    1
-  </div>
-  <div
-    className="missionName"
-  >
-    FalconSat
-  </div>
-  <div
-    className="info"
+    className="content"
   >
     <div
-      className="date"
+      className="flightNumber"
     >
-      24th Mar 2006
+      #
+      1
     </div>
     <div
-      className="rocketName"
+      className="missionName"
     >
-      Falcon 1
+      FalconSat
+    </div>
+    <div
+      className="info"
+    >
+      <div>
+        24th Mar 2006
+      </div>
+      <div
+        className="rocketName"
+      >
+        Falcon 1
+      </div>
     </div>
   </div>
 </li>
